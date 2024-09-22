@@ -10,9 +10,26 @@ This project automates the deployment of a Jenkins CI/CD environment on AWS usin
 > You can find the installation script I created for the Jenkins setup at the following link:  
 > [Jenkins and Tomcat Installation Script](https://github.com/Matanmoshes/Knowledge-Base/blob/main/Jenkins/Jenkins%20Installation/install_tomcat_jenkins.sh.md).
 
+
+
 ---
 
-## Prerequisite:
+## Prerequisites
+
+### Terraform Backend Setup
+1. Begin by configuring credentials in the [terraform-backend-setup repository](https://github.com/Matanmoshes/terraform-backend-setup).
+2. Add the AWS `Access Key ID` and `Secret Access Key` as GitHub repository secrets.
+3. Specify the S3 bucket name in the repository.
+4. Push your changes to the repository. This will trigger a GitHub Action, which will run a GitHub Runner to provision the Terraform backend, including the S3 bucket and DynamoDB table, in AWS.
+
+### AWS Credentials and Key Pair
+1. Create a key pair in the AWS Console.
+   ![Key Pair Creation](https://github.com/user-attachments/assets/9e2ac544-36f2-4f9a-ac7c-90a33f3e67c5)
+2. Set up your AWS credentials using the `aws configure` command on your local machine.
+3. Initialize the Terraform environment by running:
+   ```bash
+   terraform init -reconfigure
+   ```
 
 
 ---
