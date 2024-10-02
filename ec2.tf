@@ -93,10 +93,6 @@ resource "aws_instance" "jenkins_agent2" {
         sudo ufw allow OpenSSH
         sudo ufw --force enable
         sudo reboot
-        
-        # Mount EFS
-        # mkdir /mnt/efs
-        # sudo mount -t efs ${aws_efs_file_system.jenkins_efs.id}:/ /mnt/efs
     EOF
 
     tags = {
