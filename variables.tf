@@ -31,5 +31,5 @@ variable "vpc_cidr" {
 variable "key_name" {
     description = "Key pair name for EC2 instances"
     type        = string
-    default = "24-09-24-key"  # Change key name
+    default = "02-10-24-key"  # Change key name
 }
